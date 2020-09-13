@@ -1,0 +1,13 @@
+.splashScreen-custom {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+  background-color: var(--dark);
+}
+
+.splashScreen-text {
+  font-weight: 500;
+	margin: 0 30px;
+	color: var(--light);
+}
