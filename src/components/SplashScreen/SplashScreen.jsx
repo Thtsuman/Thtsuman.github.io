@@ -10,6 +10,12 @@ const SplashScreen = () => {
 	const [splashDone, setSplashDone] = useState(false)
 	const [splashScreenContainer, setSplashScreenContainer] = useState({})
 
+	const handleDisplay = () => {
+		setSplashScreenContainer({
+			display: "none",
+		})
+	}
+
 	const firstAnim = {
 		from: { marginTop: 300 },
 		to: { marginTop: 0 },
@@ -18,6 +24,8 @@ const SplashScreen = () => {
 	const secondAnim = {
 		from: { marginTop: 0, opacity: 1 },
 		to: { marginTop: -200, opacity: 0 },
+		delay: 500,
+		onRest: handleDisplay,
 	}
 
 	const trail = useTrail(textArray.length, {
@@ -25,29 +33,18 @@ const SplashScreen = () => {
 		delay: 50,
 		config,
 		to: {
-			opacity: 1,
-			x: 0,
-			height: 27,
+			opacity: splashDone ? 0 : 1,
+			x: splashDone ? 0 : -10,
+			height: splashDone ? 0 : 40,
 		},
 		from: { opacity: 0, x: -10, height: 0 },
 	})
 
-	const handleDisplay = () => {
-		if (splashDone) {
-			setSplashScreenContainer({
-				display: "none",
-			})
-		}
-	}
+	const finalAnim = splashDone ? secondAnim : firstAnim
 
 	return (
 		<div style={splashScreenContainer}>
-			<Spring
-				from={splashDone ? secondAnim.from : firstAnim.from}
-				to={splashDone ? secondAnim.to : firstAnim.to}
-				delay={50}
-				onRest={handleDisplay}
-			>
+			<Spring {...finalAnim}>
 				{(props) => (
 					<div style={props}>
 						<div className="splashScreen-custom">

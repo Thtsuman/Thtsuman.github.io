@@ -6,8 +6,15 @@
   background-color: var(--dark);
 }
 
+@media(min-width: 500px) {
+  .splashScreen-custom {
+    justify-content: center;
+  }
+}
+
 .splashScreen-text {
   font-weight: 500;
 	margin: 0 30px;
-	color: var(--light);
+  color: var(--light);
+  font-size: 24px;
 }
