@@ -1,7 +1,8 @@
 import React from "react"
+import "./emoji.style.css"
 const Emoji = (props) => (
 	<span
-		className="emoji"
+		className="emoji wave"
 		role="img"
 		aria-label={props.label ? props.label : ""}
 		aria-hidden={props.label ? "false" : "true"}

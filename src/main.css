@@ -24,6 +24,9 @@ body {
 }
 
 .homeScreen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .homeScreen-text {
@@ -48,4 +51,9 @@ body {
 .card-text {
   color: var(--text-light);
   font-size: .9rem;
+}
+
+
+.card-container {
+  margin-top: -10px;
 }

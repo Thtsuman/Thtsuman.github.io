@@ -23,7 +23,7 @@ const SplashScreen = () => {
 
 	const secondAnim = {
 		from: { marginTop: 0, opacity: 1 },
-		to: { marginTop: -window.screen.height, opacity: 0 },
+		to: { marginTop: -(window.screen.height - 20), opacity: 0 },
 		delay: 500,
 		onRest: handleDisplay,
 	}
