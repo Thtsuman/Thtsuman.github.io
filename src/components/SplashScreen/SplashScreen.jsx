@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useHistory } from "react-router-dom"
 import { animated, useTrail } from "react-spring"
 import { Spring } from "react-spring/renderprops"
 import "./splashScreen.style.css"
@@ -8,12 +9,16 @@ const config = { mass: 20, tension: 2000, friction: 200 }
 
 const SplashScreen = () => {
 	const [splashDone, setSplashDone] = useState(false)
-	const [splashScreenContainer, setSplashScreenContainer] = useState({})
+	const [splashScreenContainer, setSplashScreenContainer] = useState({
+    overflow: 'hidden'
+  })
+	let history = useHistory()
 
 	const handleDisplay = () => {
 		setSplashScreenContainer({
 			display: "none",
 		})
+		history.push("/home")
 	}
 
 	const firstAnim = {
@@ -23,13 +28,15 @@ const SplashScreen = () => {
 
 	const secondAnim = {
 		from: { marginTop: 0, opacity: 1 },
-		to: { marginTop: -(window.screen.height - 20), opacity: 0 },
+		to: { marginTop: -(window.screen.height - 50), opacity: 0 },
 		delay: 500,
 		onRest: handleDisplay,
 	}
 
 	const trail = useTrail(textArray.length, {
-		onRest: () => setSplashDone(true),
+		onRest: () => {
+			setSplashDone(true)
+		},
 		delay: 50,
 		config,
 		to: {
