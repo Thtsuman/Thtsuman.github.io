@@ -8,15 +8,13 @@ const HomeScreen = () => {
 	return (
 		<div className="homeScreen-container">
 			<div className="header-container container">
-				<div className="left">
-					<p className="homeScreen-text" data-scroll data-scroll-speed="3" data-scroll-position="top">
-						Hey there <Emoji symbol="👋" label="hey" />, <br /> I am Suman <br />{" "}
-						<span className="homeScreen-title">{title}</span>
-					</p>
-
-					{/* <DotPattern /> */}
+				<div className="top">
+					<div className="title">
+						Suman - Front End Developer & <br /> UI Designer, currently working <br /> at Pogo91
+					</div>
+					<div className="h-line"></div>
 				</div>
-				<div className="right"></div>
+				<div>See more </div>
 			</div>
 			<div className="container">
 				<h1>Project Show Off</h1>
@@ -29,12 +27,20 @@ const HomeScreen = () => {
 						alt=""
 					/>
 
-          <div className="img-overlay"></div>
+					<div className="img-overlay"></div>
 					<div className="container">
-						<h3 className="section-title">Hello</h3>
+						<div className="section-wrapper">
+							<h3 className="section-title">Hello</h3>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque omnis voluptatum nulla maxime debitis
+								quas et blanditiis sint ab vero?
+							</p>
+              <div>see more</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div className="footer-section">Footer</div>
 		</div>
 	)
 }
